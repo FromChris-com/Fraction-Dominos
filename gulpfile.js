@@ -64,17 +64,6 @@ function createAudioSpritesFiles(sourcePath, outputPath) {
     if (err) return console.error(err);
 
     fs.writeFile(`${outputPath}.json`, JSON.stringify(obj, null, 2), () => {
-      fs.readdir(sourcePath, (err, files)=>{
-        for (let i = 0, len = files.length; i < len; i++) {
-          let match = files[i].match(new RegExp( outputPath, 'g' ));
-          if(match === null) {
-            const fileToDelete = `./${sourcePath.replace("src", "dist")}/${files[i]}`;
-            fs.unlink(fileToDelete, () => {
-              console.log(`create audio sprites gulp task removed: ${files[i]}`)
-            });
-          }
-        }
-      });
       console.log(`Audio sprite files generated with ${outputPath}.json file`);
     })
   })

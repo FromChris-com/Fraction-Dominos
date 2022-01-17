@@ -1,7 +1,7 @@
-import Phaser from 'phaser';
-import sceneLoader from './sceneLoader';
-import sceneTitle from './sceneTitle';
-import sceneMain from './sceneMain';
+import Phaser from "phaser";
+import sceneLoader from "./sceneLoader";
+import sceneTitle from "./sceneTitle";
+import sceneMain from "./sceneMain";
 
 
 const config = {
@@ -9,18 +9,18 @@ const config = {
   type: Phaser.AUTO,                                                
   width: 1600,
   height: 900,
-  parent: 'phaser-game',
+  parent: "phaser-game",
   scene: [sceneLoader,sceneTitle,sceneMain],
   backgroundColor: "#3D86FF",
   physics:{
-        default: "arcade",
-        arcade: {
-          debug: false,
-        }
+    default: "arcade",
+    arcade: {
+      debug: false,
+    }
   }, 
   scale:{
-        mode: Phaser.Scale.ScaleModes.FIT,
-        autoCenter: Phaser.Scale.Center.CENTER_BOTH
+    mode: Phaser.Scale.ScaleModes.FIT,
+    autoCenter: Phaser.Scale.Center.CENTER_BOTH
   } 
 };
 	 
